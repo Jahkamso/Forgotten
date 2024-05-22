@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgotten - get reoccuring reminders on important tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="flex flex-col items-center min-h-[100vh] text-center gap-20 pt-20 relative"
+    >
+      <div class="flex flex-col gap-5 text-center">
+        <h1 class="text-6xl font-bold">Forgotten</h1>
+        <p>
+          Get reoccuring reminders, <br />
+          Improve productivity and health
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="flex items-center gap-2">
+          <h2 id="display-text" class="text-5xl">1</h2>
+          <span>min</span>
+        </div>
+        <h3
+          id="alert-text"
+          class="mt-5 bg-purple-600 py-1 px-5 text-white transition-opacity opacity-0"
+        >
+          Take a break
+        </h3>
+        <div
+          id="edit-popup"
+          class="absolute hidden text-white bg-slate-600 transform translate-[-50%, -50%] pt-3 pb-5 px-10"
+        >
+          <div class="flex flex-col items-center gap-5">
+            <h3>Change duration</h3>
+            <input
+              id="input-field"
+              class="w-[90%] text-black text-sm border-none outline-none px-3 placeholder:text-sm"
+              type="text"
+              placeholder="i.e 10, 30, etc..."
+            />
+            <h3>Your reminder</h3>
+            <input
+              id="user-reminder"
+              class="w-[90%] text-black text-sm border-none outline-none px-3 placeholder:text-sm"
+              type="text"
+              placeholder="Drink water, stretch"
+            />
+            <button onclick="hideModal()" class="bg-red-500 text-white py-1 px-5 rounded-md">cancel</button>
+          </div>
+        </div>
+        <div>
+          <button
+            id="start-btn"
+            class="absolute bottom-10 text-white bg-green-600 py-1 px-5 rounded-md"
+          >
+            Start
+          </button>
+          <button
+            id="stop-btn"
+            class="absolute bottom-10 text-white bg-red-600 py-1 px-5 rounded-md hidden"
+          >
+            Stop
+          </button>
+        </div>
+        <div>
+          <button
+            id="edit-btn"
+            class="absolute bottom-10 right-10 text-white bg-purple-500 py-1 px-5 rounded-md"
+          >
+            Edit
+          </button>
+        </div>
+      </div>
+      <audio id="notification-audio">
+        <source src="notification.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
