@@ -47,27 +47,30 @@
               type="text"
               placeholder="Drink water, stretch"
             />
-            <button onclick="hideModal()" class="bg-red-500 text-white py-1 px-5 rounded-md">cancel</button>
+            <div class="flex gap-2">
+              <button onclick="hideModal()" class="bg-red-500 text-white py-1 px-5 rounded-md">cancel</button>
+              <button onclick="saveEdit()" class="bg-green-500 text-white py-1 px-5 rounded-md">save</button>
+            </div>
           </div>
         </div>
-        <div>
+        <div class="absolute bottom-10">
           <button
             id="start-btn"
-            class="absolute bottom-10 text-white bg-green-600 py-1 px-5 rounded-md"
+            class=" text-white bg-green-600 py-1 px-5 rounded-md"
           >
             Start
           </button>
           <button
             id="stop-btn"
-            class="absolute bottom-10 text-white bg-red-600 py-1 px-5 rounded-md hidden"
+            class=" text-white bg-red-600 py-1 px-5 rounded-md hidden"
           >
             Stop
           </button>
         </div>
-        <div>
+        <div class="absolute bottom-10 right-10">
           <button
             id="edit-btn"
-            class="absolute bottom-10 right-10 text-white bg-purple-500 py-1 px-5 rounded-md"
+            class="text-white bg-purple-500 py-1 px-5 rounded-md"
           >
             Edit
           </button>

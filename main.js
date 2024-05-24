@@ -70,27 +70,26 @@ function hideModal() {
   userReminder.value = ""
 }
 
-editButton.addEventListener("click", () => {
-  if (editButton.innerText === "Edit") { // checks if the text of the edit button matches what we want
-    editPopup.style.display = "block";
-    editButton.innerText = "Save";
-  } else if (editButton.innerText === "Save") {
-    const userInput = getUserInput(); // Retrieve user input
-    const userReminderInput = getUserReminder()
-    stopCountDown()
+function saveEdit() {
+  const userInput = getUserInput(); // Retrieve user input
+  const userReminderInput = getUserReminder();
+  stopCountDown();
   //   startCountdown(userInput)
   startButton.style.display = "block";
   stopButton.style.display = "none";
-    inputField.value = ""
-    userReminder.value = ""
-    if (userInput === "" || userReminderInput === "") {
-      alert("Input all fields"); // alerts the user to fill in the input field
-    } else if (userInput !== "" && userReminderInput !== "") {
-      displayText.innerHTML = userInput;
-      alertText.innerHTML = userReminderInput;
-      userTimerSet = parseInt(userInput); // converts the userInput from a string to number
-      editButton.innerText = "Edit";
-      editPopup.style.display = "none";
-    }
+  inputField.value = "";
+  userReminder.value = "";
+  if (userInput === "" || userReminderInput === "") {
+    alert("Input all fields"); // alerts the user to fill in the input field
+  } else if (userInput !== "" && userReminderInput !== "") {
+    displayText.innerHTML = userInput;
+    alertText.innerHTML = userReminderInput;
+    userTimerSet = parseInt(userInput); // converts the userInput from a string to number
+    editButton.innerText = "Edit";
+    editPopup.style.display = "none";
   }
+}
+
+editButton.addEventListener("click", () => { // checks if the text of the edit button matches what we want
+    editPopup.style.display = "block";
 });
